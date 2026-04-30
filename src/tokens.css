@@ -1,0 +1,116 @@
+/*
+ * Design tokens — single source of truth for color, type, spacing, radii, shadows, z.
+ * Tailwind reads these via tailwind.config.js. Components reference Tailwind classes
+ * (bg-bg-base, text-ink-100, etc) so raw values never appear inline.
+ */
+:root {
+  /* ─── Color: Neutrals (high-contrast, near-black background, near-white ink) ─── */
+  --color-bg-base: #0a0a0a;
+  --color-bg-raised: #111111;
+  --color-bg-surface: #161616;
+  --color-bg-inverse: #f4f3ee;
+
+  --color-ink-0: #ffffff;
+  --color-ink-50: #f5f4ef;
+  --color-ink-100: #e8e6df;
+  --color-ink-200: #b9b6ad;
+  --color-ink-300: #8a877f;
+  --color-ink-400: #5d5b54;
+  --color-ink-500: #3a3935;
+  --color-ink-900: #0a0a0a;
+
+  /* ─── Color: Accent (electric lime — single accent, used sparingly) ─── */
+  --color-accent: #d6ff3d;
+  --color-accent-dim: #a3c52a;
+  --color-accent-glow: rgba(214, 255, 61, 0.18);
+  --color-accent-contrast: #0a0a0a;
+
+  /* ─── Color: Lines / strokes (calibrated against bg-base) ─── */
+  --color-line-subtle: rgba(245, 244, 239, 0.06);
+  --color-line: rgba(245, 244, 239, 0.12);
+  --color-line-strong: rgba(245, 244, 239, 0.22);
+
+  /* ─── Type scale (clamp-based fluid scale) ─── */
+  --fs-eyebrow: 0.75rem;          /* 12px */
+  --fs-body-sm: 0.875rem;         /* 14px */
+  --fs-body: 1rem;                /* 16px */
+  --fs-body-lg: 1.125rem;         /* 18px */
+  --fs-h6: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --fs-h5: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --fs-h4: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --fs-h3: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  --fs-h2: clamp(2.25rem, 1.6rem + 2.8vw, 3.75rem);
+  --fs-h1: clamp(3rem, 2rem + 5vw, 6.5rem);
+  --fs-display: clamp(3.75rem, 2rem + 8vw, 9rem);
+
+  --lh-tight: 0.95;
+  --lh-snug: 1.05;
+  --lh-base: 1.5;
+  --lh-relaxed: 1.65;
+
+  --tracking-tightest: -0.04em;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-widest: 0.18em;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi: 600;
+  --fw-bold: 700;
+
+  /* ─── Spacing (4px base, t-shirt scale) ─── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-40: 10rem;
+  --space-gutter: clamp(1.25rem, 0.8rem + 2vw, 2rem);
+  --space-section: clamp(4rem, 2rem + 7vw, 8rem);
+
+  /* ─── Layout ─── */
+  --container-max: 1400px;
+
+  /* ─── Radii ─── */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* ─── Shadows ─── */
+  --shadow-glow: 0 0 0 1px var(--color-line), 0 30px 60px -20px rgba(0, 0, 0, 0.5),
+    0 0 80px -20px var(--color-accent-glow);
+  --shadow-card: 0 0 0 1px var(--color-line-subtle),
+    0 12px 32px -16px rgba(0, 0, 0, 0.6);
+  --shadow-card-hover: 0 0 0 1px var(--color-line),
+    0 28px 60px -24px rgba(0, 0, 0, 0.8),
+    0 0 100px -40px var(--color-accent-glow);
+
+  /* ─── Z-index scale ─── */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 30;
+  --z-nav: 40;
+  --z-overlay: 50;
+  --z-modal: 60;
+  --z-toast: 70;
+
+  /* ─── Motion ─── */
+  --ease-standard: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-accel: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 700ms;
+}
